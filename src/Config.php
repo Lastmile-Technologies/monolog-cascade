@@ -131,6 +131,11 @@ class Config {
             $this->formatters[$formatterId] = $formatterLoader->load();
         }
     }
+    
+    
+    public function getFormatter(string $formatterName): Monolog\Formatter\FormatterInterface {
+        return $this->formatters[$formatterName];
+    }
 
     /**
      * Configure the handlers
